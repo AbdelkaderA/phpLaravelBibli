@@ -18,7 +18,7 @@ class CreateStatesTable extends Migration
             $table->string('name', 100);
             $table->string('slug', 50);
             $table->string('color', 20);
-            $table->integer('indice');
+            //$table->integer('indice');
         });
     }
 

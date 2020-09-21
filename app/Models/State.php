@@ -10,7 +10,7 @@ class State extends Model
         'name', 
         'slug', 
         'color', 
-        'indice', 
+        //'indice', 
     ];
     public $timestamps = false;
 }
