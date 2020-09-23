@@ -15,6 +15,8 @@ class CreateEmpruntsTable extends Migration
     {
         Schema::create('emprunts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('book_Id');
+            $table->foreignId('adherent_Id');
             $table->timestamps();
         });
     }
