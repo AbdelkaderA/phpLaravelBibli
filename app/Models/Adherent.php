@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+
+class Adherent extends Model
 {
     use Notifiable;
     /**
@@ -14,11 +14,13 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [ 
-        'name',
-        'email', 
-        'password',  
-        'last_seen',
+   
+    protected $fillable = [
+        'Nom', 
+        'Prenom', 
+        'Email', 
+        'Tel', 
+        'created_at',
     ];
     /**
      * The attributes that should be mutated to dates.
@@ -28,16 +30,6 @@ class User extends Authenticatable
     protected $dates = [
         'last_seen',
     ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
     /**
      * The attributes that should be cast to native types.
      *
