@@ -15,8 +15,13 @@ class CreateEmpruntsTable extends Migration
     {
         Schema::create('emprunts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_Id');
-            $table->foreignId('adherent_Id');
+            $table->unsignedBigInteger('adherent_id');
+            $table->foreign('adherent_id')->references('id')->on('adherent');
+            $table->unsignedBigInteger('book_id');
+            $table->foreign('book_id')->references('id')->on('book');
+            $table->date('date_debut');
+            $table->date('date_fin');
+            $table->date('date_fin_reel')->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,10 @@ class Emprunt extends Model
      * @var array
      */
     protected $fillable = [
-        'book_id',
         'adherent_id',
+        'book_id',
+        'date_debut',
+        'date_fin',
+        'date_fin_reel',
     ];
 }
